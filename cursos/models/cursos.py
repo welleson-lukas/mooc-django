@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib import admin
 
 
 class Cursos(models.Model):
@@ -19,3 +20,4 @@ class Cursos(models.Model):
         app_label = 'cursos'
         verbose_name = 'Curso'
         verbose_name_plural = 'Cursos'
+

@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.contrib.auth.models import User
 
 
 class Posts(models.Model):
@@ -7,7 +8,7 @@ class Posts(models.Model):
     titulo = models.CharField("Título", max_length=254, null=False)
     conteudo = models.TextField("Conteúdo", null=False)
 
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='posts')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
 
     categorias = models.ManyToManyField('core.Categorias', related_name='categorias')
     tags = models.ManyToManyField('core.Tags', related_name='tags')
